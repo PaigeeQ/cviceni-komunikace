@@ -15,10 +15,10 @@ export const Ukol1 = () => {
         <strong>{jmeno}</strong>
       </p>
       <div>
-        <button>Jirka</button>
-        <button>Honza</button>
-        <button>Tomáš</button>
-        <button>Šimon</button>
+        <button onClick={() => setJmeno("Jirka")}>Jirka</button>
+        <button onClick={() => setJmeno("Honza")}>Honza</button>
+        <button onClick={() => setJmeno("Tomáš")}>Tomáš</button>
+        <button onClick={() => setJmeno("Šimon")}>Šimon</button>
       </div>
     </>
   );

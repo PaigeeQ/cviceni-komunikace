@@ -1,4 +1,5 @@
 import { InputField } from "./InputField";
+import { useState } from "react";
 
 /*
 Zadání: Máme k dispozici specializovanou komponentu InputField pro rychlé vytvoření vstupního pole
@@ -14,10 +15,18 @@ Krok 4: Vyzkoušejte si obousměrný binding. Do komponenty `InputField` přidej
 */
 
 export const Ukol4 = () => {
+  const [namePodNapisem, setNamePodNapisem] = useState("");
+
   return (
     <>
-      <p>Jméno:</p>
-      <InputField label="Jméno" type="text" />
+      <h2>Zadej své jméno</h2>
+      <p>{namePodNapisem ? `Jméno: ${namePodNapisem}` : "Zatím nic nezadáno 🙈"}</p>
+      <InputField 
+        label="Jméno" 
+        type="text" 
+        value={namePodNapisem}
+        onValueChange= {setNamePodNapisem}
+        />
     </>
   );
 };

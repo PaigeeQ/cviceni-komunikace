@@ -1,13 +1,19 @@
 import './style.css';
 
 export const InputField = ({ label, type, value, onValueChange }) => {
-  return (
+  const handleChange = (e) => {
+    onValueChange(e.target.value)
+  };
+
+    return (
     <div className="input-field">
-      <label className="input-field__label">{label}</label>
+      <label>{label}
       <input
-        className="input-field__input"
         type={type}
+        value={value}
+        onChange={handleChange}
       />
+      </label>
     </div>
   );
 };
